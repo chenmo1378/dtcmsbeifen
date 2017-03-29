@@ -1,0 +1,20 @@
+﻿@using System.Data
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<form action="/submit_ajax/login" method="post">
+    <input type="text" name="name" />
+    <input type="text" name="pwd" />
+    <input type="submit" value="dl" />
+</form>
+<ul>
+    @{
+        DataTable dt = ViewBag.dt as DataTable;
+        foreach (DataRow dr in dt.Rows) 
+        {
+            <li>@dr["title"]</li>
+        }    
+    }
+</ul>
